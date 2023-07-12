@@ -30,7 +30,7 @@ public class SubmissionControllerTest {
         public void testGetSubmission() {
             // Set up
             String id = "1";
-            SubmissionDTO submission = new SubmissionDTO(id, "Sample Submission");
+            SubmissionDTO submission = new SubmissionDTO(id);
             when(submissionService.getSubmission(id)).thenReturn(submission);
 
             // Test
@@ -45,8 +45,8 @@ public class SubmissionControllerTest {
         public void testGetAll() {
             // Set up
             List<SubmissionDTO> submissions = Arrays.asList(
-                    new SubmissionDTO("1", "Submission 1"),
-                    new SubmissionDTO("2", "Submission 2")
+                    new SubmissionDTO("1"),
+                    new SubmissionDTO("2")
             );
             when(submissionService.getAll()).thenReturn(submissions);
 
@@ -61,7 +61,7 @@ public class SubmissionControllerTest {
         @Test
         public void testAddSubmission() {
             // Set up
-            SubmissionDTO submission = new SubmissionDTO("1", "New Submission");
+            SubmissionDTO submission = new SubmissionDTO("1");
             when(submissionService.addSubmission(any(SubmissionDTO.class))).thenReturn(submission);
 
             // Test
@@ -75,7 +75,7 @@ public class SubmissionControllerTest {
         @Test
         public void testUpdateSubmission() {
             // Set up
-            SubmissionDTO submission = new SubmissionDTO("1", "Updated Submission");
+            SubmissionDTO submission = new SubmissionDTO("1");
             when(submissionService.updateSubmission(any(SubmissionDTO.class))).thenReturn(submission);
 
             // Test
